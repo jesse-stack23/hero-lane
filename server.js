@@ -15,7 +15,7 @@ const router = express.Router();
 
 myapp.get('/' function(req, res){
 	res.sendFile(__dirname);
-	res.sendFile(path:join(__dirname + '/UI/index.html'));
+	res.sendFile(path:join(__dirname + 'UI/index.html'));
 });
 
 myapp.use(express.static(__dirname + '/UI'));
