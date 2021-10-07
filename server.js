@@ -1,4 +1,4 @@
-const {client} = require('pg');
+const {Client} = require('pg');
 var express = require('express');
 var bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
