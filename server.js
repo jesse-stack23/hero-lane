@@ -14,7 +14,6 @@ const path = require('path');
 const router = express.Router();
 
 myapp.get('/' function(req, res){
-	res.sendFile(__dirname);
 	res.sendFile(path:join(__dirname + 'UI/index.html'));
 });
 
