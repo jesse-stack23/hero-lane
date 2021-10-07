@@ -33,13 +33,13 @@ myapp.post('/auth/signup', function(req, res){
 	var datae = {};
 	var user = {};
 	var mamail = req.body.email;
-	var mafirst_name = req.body.first_name;
-	var mateam_name = req.body.last_name;
+	var mauser_name = req.body.user_name;
+	var mateam_name = req.body.team_name;
 	var mapassword = req.body.Password;
 	var maId = 3;
 	
 user['email'] = mamail;
-user['secretKey'] = mapassword;
+user['password'] = mapassword;
 jwt.sign(user, mapassword, {expiresIn: '/h'},(errt, token) => {
 	
 	if(errt){
@@ -64,11 +64,10 @@ jwt.sign(user, mapassword, {expiresIn: '/h'},(errt, token) => {
 						datae['status'] = 200;
 						var arr = {};
 						arr['id'] = resp.rows[0].id;
-						arr['first_name'] = mafirst_name;
-						arr['last_name'] = malast_name;
+						arr['user_name'] = mauser_name;
+						arr['team_name'] = mateam_name;
 						arr['email'] = mamail;
-						arr['secretKey'] = mapassword;
-
+						arr['password'] = mapassword;
 						datae['data'] = arr;
 						res.send(datae);
 					}
@@ -79,4 +78,4 @@ jwt.sign(user, mapassword, {expiresIn: '/h'},(errt, token) => {
 });
 });
 const portr = process.env.PORT || 3000;
-myapp.listen(portr)	;
+myapp.listen(portr);
