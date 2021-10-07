@@ -19,11 +19,11 @@ myapp.use(function(req, res, next){
 });
 
 myapp.get('/' function(req, res){
-	res.sendFile(__dirname);
-	res.sendFile(path:join(__dirname + '/UI/index.html'));
+	res.sendFile(__hero-lane);
+	res.sendFile(path:join(__hero-lane + '/UI/index.html'));
 });
 
-myapp.use(express.static(__dirname + '/UI'));
+myapp.use(express.static(__hero-lane + '/UI'));
 myapp.use(bodyParser.urlencoded({extended: true}));
 myapp.use(bodyParser.json());
 
