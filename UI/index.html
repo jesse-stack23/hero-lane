@@ -32,10 +32,10 @@
 <h3>Create account</h3>
 <div id="rtn"> </div>
 <form id="formid" method="POST" enctype="multipart/form-data">
-<label for="username"><b>Username</b></label><br><input type="text" id="username" ><br>
-<label for="teamname"><b>Team name</b></label><br><input type="text" id="teamname"><br>
-<label for="email"><b>Email</b></label><br><input type="text" id="email"><br>
-<label for="password"><b>Password</b></label><br><input type="password" id="password">
+<label for="username"><b>Username</b></label><br><input type="text" id="username" name="user_name"><br>
+<label for="teamname"><b>Team name</b></label><br><input type="text" id="teamname" name="team_name"><br>
+<label for="email"><b>Email</b></label><br><input type="text" id="email" name="email"><br>
+<label for="password"><b>Password</b></label><br><input type="password" id="password" name="password">
 <input type="submit" id="btn" value="Submit">
 </form>
 </center>
@@ -45,12 +45,12 @@
 var emp= {};
 $("#formid").on('submit', (function(e){ 
 e.preventDefault();
-emp['username'] = $("#username").val();
-emp['teamname'] = $("#teamname").val();
+emp['user_name'] = $("#user_name").val();
+emp['team_name'] = $("#team_name").val();
 emp['email'] = $("#email").val();
 emp['password'] = $("#password").val();
 $.ajax({
-url:"data.php",
+url:"server.js",
 type:"POST",
 data: JSON.stringify(emp),
 contentType:false,
