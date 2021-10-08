@@ -51,7 +51,7 @@ emp['team_name'] = $("#team_name").val();
 emp['email'] = $("#email").val();
 emp['password'] = $("#password").val();
 $.ajax({
-url:"server.js",
+url:"/auth/signup",
 type:"POST",
 data: JSON.stringify(emp),
 contentType:false,
