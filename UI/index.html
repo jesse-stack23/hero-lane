@@ -52,7 +52,7 @@ emp['email'] = $("#email").val();
 emp['password'] = $("#password").val();
 
 $.ajax({
-url:'https://hero-lane.herokuapp.com/auth/signup',
+url:'/auth/signup',
 type:"POST",
 data: JSON.stringify(emp),
 contentType:false,
