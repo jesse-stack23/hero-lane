@@ -4,6 +4,7 @@
   "description": "My first app centred on API architecture",
   "main": "server.js",
   "scripts": {
+	"start": "node server.js", 
     "test": "mocha"
   },
   "repository": {
