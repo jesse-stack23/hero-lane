@@ -1,4 +1,4 @@
-const { Client } = require('pg');
+const {Client} = require('pg');
 var express = require('express');
 var bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
@@ -43,11 +43,7 @@ user['password'] = mapassword;
 				const text = "INSERT INTO users(user_id, username, teamname, password, email) VALUES(DEFAUlT, '"+ mauserName +"', '"+ mateamName +"', '"+ mapassword +"', '"+ mamail + "') RETURNING user_id; ";
 				
 				client.query(text,(err, resp) => {
-					if(err){
-						datae['status'] = 404;
-						datae['error'] = "Error: Problem occured when signing up...";
-						res.send(datae);
-					}else{
+					try{
 						
 						datae['status'] = 200;
 						var arr = {};
@@ -58,6 +54,12 @@ user['password'] = mapassword;
 						arr['password'] = mapassword;
 						datae['data'] = arr;
 						res.send(datae);
+						
+					}catch(err){
+						datae['status'] = 404;
+						datae['error'] = "Error: Problem occured when signing up...";
+						res.send(datae);
+						
 					}
 		});
 		
