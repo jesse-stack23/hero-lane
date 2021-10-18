@@ -39,11 +39,6 @@ myapp.post('/auth/signup', function(req, res){
 	
 user['email'] = mamail;
 user['password'] = mapassword;
-
-client.query("SELECT user_id FROM users ORDER BY user_id DESC;" ,(errf, respf)=>{
-			if(errf){
-				
-			}else{
 				
 				const text = "INSERT INTO users(user_id, username, teamname, password, email) VALUES(DEFAUlT, '"+ mauserName +"', '"+ mateamName +"', '"+ mapassword +"', '"+ mamail + "') RETURNING user_id; ";
 				
@@ -64,10 +59,8 @@ client.query("SELECT user_id FROM users ORDER BY user_id DESC;" ,(errf, respf)=>
 						datae['data'] = arr;
 						res.send(datae);
 					}
-				});
-			}
-		});		
-
+		});
+		
 });
 const portr = process.env.PORT || 3000;
 myapp.listen(portr);
