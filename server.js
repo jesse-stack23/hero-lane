@@ -3,7 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
 const client = new Client({
-	connectionString: "postgres://fertcugcyczjpp:0458fa8a42c4a15c3a832b5f57633ee4afe1439e1031c51026fac9dcd6c566f1@ec2-54-167-152-185.compute-1.amazonaws.com:5432/d5fgkbi00p3hr4",
+	connectionString: "postgres://evbwzlacegshgs:305f85b3d186ce49b82d933cc5a191350c1c0534fc9a04ae07f867a510a21d4a@ec2-3-220-90-40.compute-1.amazonaws.com:5432/d86178g12tqr2c",
 	ssl: true,
 });
 
